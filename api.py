@@ -117,7 +117,7 @@ def insert_dep():
              print("You can't enter spaces between words or write special character you can use '_' only: ")   
         else:
               print("Your Department is added :")   
-              print(f"You can see the results also on thunder client using POST and this url: http://127.0.0.1:8000/emps/add/dep_table/{dep_name} ")
+              print(f"You can add department also on thunder client using POST and this url: http://127.0.0.1:8000/emps/add/dep_table/{dep_name} ")
 
 @app.post("/emps/add/dep_table/{dep_name}")
 def add_dep(dep_name):
@@ -155,7 +155,7 @@ def insert_emp():
                 if  emp.AGE>17 and emp.AGE<66:
                     break
                 else:
-                     print("please enter suatiable Age")
+                     print("please enter suatiable Age between 18 and 65")
         while True:    
             emp.SALARY=input(" Please enter new employee Salary consists of only Integer Number to add To Exit press e: ").strip().lower()
             if classes.CHECK.check_int(emp.SALARY)== 'exit':
@@ -198,6 +198,8 @@ def insert_emp():
 
 @app.post("/emps/add/emp_table/")
 def add_emp(emp:classes.Employee):
+        if not emp.FIRST_NAME  or not emp.LAST_NAME or not emp.AGE or not emp.SALARY or not emp.EMAIL or not emp.DEPARTMENT_ID  :
+            return("your variables only FIRST_NAME,LAST_NAME,AGE,SALARY,EMAIL,DEPARTMENT_ID")
         emp.FIRST_NAME=emp.FIRST_NAME.strip().lower()
         emp.LAST_NAME=emp.LAST_NAME.strip().lower()
         emp.EMAIL=emp.EMAIL.strip().lower()
@@ -244,7 +246,7 @@ def update_emp():
                 print("MAX SALARY SHOULD EQUAL OR MORE THAN MIN SALARY")
                 
 
-            col_values=update_salary(salary)
+    col_values=update_salary(salary)
     print(f"{col_values} You can see the results on thunder using put using this url: http://127.0.0.1:8000/emps/update/emp_percentage/")
 
 # update example
@@ -256,7 +258,9 @@ def update_emp():
 
 @app.put("/emps/update/emp_percentage/")
 def update_salary(salary:classes.Salary):
-     
+
+    if not salary.PERCENTAGE or not salary.MIN_SALARY or not salary.MAX_SALARY:
+        return("your variables only PERCENTAGE,MIN_SALARY,MAX_SALARY")
     if salary.MIN_SALARY > salary.MAX_SALARY:
         return {"max salary should equal or greater than min salary "}
     else:
@@ -300,6 +304,8 @@ def delete_emp():
 
 @app.delete("/emps/delete/emp_table/")
 def del_emp(emp:classes.Employee):
+    if not emp.FIRST_NAME or not emp.LAST_NAME or not emp.EMAIL:
+        return("your variables only FIRST_NAME,LAST_NAME,EMAIL")
     emp.FIRST_NAME=emp.FIRST_NAME.strip().lower()
     emp.LAST_NAME=emp.LAST_NAME.strip().lower()
     emp.EMAIL=emp.EMAIL.strip().lower()

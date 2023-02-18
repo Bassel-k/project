@@ -19,14 +19,14 @@ class Salary(BaseModel):
 
 
 class CHECK():
-
+    #if value e  exit from choice if true continue if not true stay in same loop
     def check_alpha(value):
         if value.lower() =='e':
             return 'exit'
         if value.isalpha():
             return True
 
-
+    #if value e  exit from choice if true continue if not true stay in same loop
     def check_int(value):
         if value =='e':
             return 'exit'
@@ -35,6 +35,7 @@ class CHECK():
     
    
 
+    #try to convert to float if not error and greater than 0 continue  error return false stay in loop
 
     def check_float(value):
         try:
