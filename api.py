@@ -1,7 +1,7 @@
 from fastapi import FastAPI
 from database import db
 import classes
- 
+
 app = FastAPI()
 db2=db()
 
