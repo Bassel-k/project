@@ -45,7 +45,7 @@ def main():
                         5: "Add new department.",
                         6: "Add new employee.",
                         7: "Update employees salary.",
-                        8: "Delete employee you have his email.",
+                        8: "Delete employee you have name,last_name and email.",
                         9: "exit."}
                 
                 for nu,massage in option.items():
