@@ -8,7 +8,7 @@ This file contains instructions that enable the user to select the tasks they wi
 After verifying the user's authority, the program will prompt the user to initialize the databases. If the user selects yes, a confirmation message will appear to indicate that the databases have been initialized. If the databases already exist, a message will appear to notify the user. Otherwise, the data will be imported from the Excel file and exported to the database.
 
 -api.py
-On this page, variables for the select, update, and delete commands are managed and then sent to the database.py file. These variables can be received through main.py or via HTTP requests using the GE1T, PUT, POST, and DELETE methods with FastAPI.
+On this page, variables for the select, update, and delete commands are managed and then sent to the database.py file. These variables can be received through main.py or via HTTP requests using the GET, PUT, POST, and DELETE methods with FastAPI.
 
 -database.py
 On this page, the database is initialized if it does not already exist, data is imported from an Excel file and exported to the database, and all queries are executed based on the variables sent from the API page
