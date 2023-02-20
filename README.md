@@ -3,20 +3,23 @@
 The project manages an employee table and their departments through various processes.
 
 project components:
-main.py:
+-main.py:
 This file contains instructions that enable the user to select the tasks they wish to manage in the database. To begin, the user is required to enter their username and password to verify their authority to perform the operations.
-After verifying the user's authority, the program will prompt the user to initialize the databases. If the user selects 'yes,' a confirmation message will appear to indicate that the databases have been initialized. If the databases already exist, a message will appear to notify the user. Otherwise, the data will be imported from the Excel file and exported to the database.
-api.py
-On this page, variables for the select, update, and delete commands are managed and then sent to the database.py file. These variables can be received through main.py or via HTTP requests using the GET, PUT, POST, and DELETE methods with FastAPI.
+After verifying the user's authority, the program will prompt the user to initialize the databases. If the user selects yes, a confirmation message will appear to indicate that the databases have been initialized. If the databases already exist, a message will appear to notify the user. Otherwise, the data will be imported from the Excel file and exported to the database.
 
-database.py
+-api.py
+On this page, variables for the select, update, and delete commands are managed and then sent to the database.py file. These variables can be received through main.py or via HTTP requests using the GE1T, PUT, POST, and DELETE methods with FastAPI.
+
+-database.py
 On this page, the database is initialized if it does not already exist, data is imported from an Excel file and exported to the database, and all queries are executed based on the variables sent from the API page
-classes.py
+
+-classes.py
 This code contains all of the necessary classes that can be used to implement the program.
 
-users.db
+-users.db
 Before starting the program, this file must be present.
-emp.db
+
+-emp.db
 At the start of the program, this file is not present. When the user enters the program, the program is asked to initialize the database. If the user approves, then the program creates this file.
 
 
