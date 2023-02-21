@@ -37,7 +37,6 @@ def main():
             while True:
                 print("-" * 100)
                 print("Please select one of the available options.")
-                i=1
                 option={1: "Select employees information for those who work in department.",
                         2: "Select employee information for the person with this email.",
                         3: "Select employees information.",
