@@ -1,4 +1,4 @@
-def users(username,password):
+def users(user_name,password):
         from database import db
         
         data= db.users(user_name,password)
